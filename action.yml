@@ -1,0 +1,34 @@
+name: 'PR Risk Analyzer'
+description: 'Automatically analyzes PR changes for high-risk patterns (DB migrations, missing tests, security issues, config drift) and posts actionable feedback.'
+author: 'PR Risk Analyzer Team'
+branding:
+  icon: 'shield'
+  color: 'red'
+inputs:
+  github-token:
+    description: 'GitHub token (use ${{ secrets.GITHUB_TOKEN }})'
+    required: true
+  min-risk-threshold:
+    description: 'Minimum risk level to fail the check (low, medium, high, critical). Default: low'
+    default: 'low'
+  fail-on-critical:
+    description: 'Fail the check if critical risk issues are found'
+    default: 'false'
+  comment-mode:
+    description: 'How to post results: append, replace, or delete'
+    default: 'replace'
+  exclude-patterns:
+    description: 'Comma-separated glob patterns to exclude from analysis'
+    default: ''
+  include-security-checks:
+    description: 'Enable security pattern detection'
+    default: 'true'
+  include-test-checks:
+    description: 'Enable missing test detection'
+    default: 'true'
+  include-size-checks:
+    description: 'Enable PR size warnings'
+    default: 'true'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
