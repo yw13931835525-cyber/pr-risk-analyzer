@@ -1,0 +1,13 @@
+name: PR Risk Analysis — Basic
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  pr-risk-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: yw13931835525-cyber/pr-risk-analyzer@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
