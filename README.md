@@ -321,6 +321,14 @@ Contributions welcome! Please open an issue first to discuss changes.
 
 ---
 
+## ❤️ Sponsor This Project
+
+If PR Risk Analyzer saves you time and protects your codebase, consider sponsoring our work!
+
+[![Sponsor](https://github.com/sponsors/yw13931835525-cyber/widgets/badge.svg)](https://github.com/sponsors/yw13931835525-cyber)
+
+---
+
 ## 📄 License
 
 MIT License — see [LICENSE](./LICENSE)
